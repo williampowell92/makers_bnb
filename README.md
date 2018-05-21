@@ -15,6 +15,14 @@ User Stories:
 -------------
 ```
 As a user,
+So that I can use a bnb account,
+I would like to be able to sign up
+
+As a user,
+So that I can access my bnb account,
+I would like to be able to sign in
+
+As a user,
 So that I can put my property up for rent,
 I want to be able to enter my property details to the site
 
@@ -43,13 +51,18 @@ So that I can hire a space for one night,
 I want to be able to submit a hire request
 
 As a user with a property on the site,
-I want to be able to approve user requests submitted to my property
+I want to be able to approve customer requests submitted to my property
 
 As a customer,
 So that I only see spaces that are available on my specified nights,
 I would like spaces that are already booked for those nights not to be available
 
+As a customer,
+So that I know I have the property I want,
+I would like to be able to confirm a booking request
+
 As a user,
 So that I can continue to market my property until a booking is confirmed,
 I would like it to still be bookable until a booking is confirmed
+
 ```
