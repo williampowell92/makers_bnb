@@ -23,8 +23,12 @@ So that I can access my bnb account,
 I would like to be able to sign in
 
 As a user,
-So that I can put my property up for rent,
-I want to be able to enter my property details to the site
+So that I can list my space,
+I would like to enter its details in the website.
+
+As a user,
+So that my space stays on the website,
+I would like it to be remembered.
 
 As a user,
 So that customers can choose from a selection of my spaces,
