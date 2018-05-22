@@ -4,6 +4,10 @@
   "description": "Headline specifications: ------------------------",
   "main": "app.js",
   "scripts": {
+    "setup_db_drop": "sequelize db:drop",
+    "setup_db_create_seed": "sequelize db:create && sequelize db:migrate && sequelize db:seed:all",
+    "setup_test_db_drop": "sequelize db:drop --env test",
+    "setup_test_db_create_seed": "sequelize db:create --env test && sequelize db:migrate --env test && sequelize db:seed:all --env test",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
