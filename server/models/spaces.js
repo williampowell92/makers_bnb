@@ -2,7 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
   var Spaces = sequelize.define('Spaces', {
     name: DataTypes.TEXT,
-    allowNull: false
+    // allowNull: false
   }, {});
   Spaces.associate = function(models) {
     // associations can be defined here
