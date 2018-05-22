@@ -11,7 +11,7 @@ module.exports = {
       name: {
         type: Sequelize.TEXT,
         allowNull: false
-      }
+      },
     });
   },
   down: (queryInterface, Sequelize) => {
