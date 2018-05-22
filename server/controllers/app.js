@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-
+const Spaces = require('../models/index').Spaces
 
 //Settings
 app.use(express.urlencoded())
@@ -9,19 +9,22 @@ app.set('view engine', 'pug')
 //Server
 app.listen(3000, () => console.log('example app listening on port 3000!'))
 
-
-//Test Stuff
-var testArray = [1, 2, 3, 4, 5]
-var testDisplay
-
 //Routes
+app.get('/', async function (req, res) {
+  var spacesArray = []
+  await Spaces.findAll().then(spaces => {
+    spaces.forEach(function (space) {
+      spacesArray.push(space.get('name'))
+    })
+  })
 
-app.get('/', function (req, res) {
-  res.render('index', { title: 'MakersBnB', array: testArray, displayTest: testDisplay })
+  res.render('index', { title: 'MakersBnB', spaces: spacesArray })
 })
 
 app.post('/spaces/new', function (req, res) {
-  testDisplay = req.body.spaces     // your JSON
-  // res.send(req.body)
+  Spaces.create({
+    name: req.body.spaces
+  })
+
   res.redirect('/')
 })
