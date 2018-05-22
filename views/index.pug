@@ -1,0 +1,15 @@
+html
+head
+  title= title
+body
+  h1 Welcome to MakersBnB
+  p= displayTest
+  p Submit space for rent
+  form(action='/spaces/new' method='POST')
+    p
+      input.space_info(type='text', name='spaces', value='')
+    input(type='submit', value='Submit')
+
+    ul
+      each val in array
+        li= val

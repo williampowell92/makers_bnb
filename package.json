@@ -1,8 +1,8 @@
 {
-  "name": "MakersBnB",
+  "name": "makersbnb",
   "version": "1.0.0",
-  "description": "Headline specifications: -------------------------",
-  "main": "index.js",
+  "description": "Headline specifications: ------------------------",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,11 +17,16 @@
     "url": "https://github.com/samworrall/MakersBnB/issues"
   },
   "homepage": "https://github.com/samworrall/MakersBnB#readme",
-  "devDependencies": {},
+  "devDependencies": {
+    "standard": "^11.0.1"
+  },
   "dependencies": {
     "pg": "^7.4.3",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.37.8",
-    "sequelize-cli": "^4.0.0"
+    "sequelize-cli": "^4.0.0",
+    "cypress": "^2.1.0",
+    "express": "^4.16.3",
+    "pug": "^2.0.3"
   }
 }
