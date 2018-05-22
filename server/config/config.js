@@ -1,15 +1,15 @@
-{
+module.exports = {
   "development": {
-    "username": "nixlim",
+    "username": process.env.USER,
     "password": null,
     "database": "makersbnb",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "username": "nixlim",
+    "username": process.env.USER,
     "password": null,
-    "database": "makersbnb-test",
+    "database": "makersbnb_test",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }
