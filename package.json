@@ -6,9 +6,11 @@
   "scripts": {
     "easy_setup": "sequelize db:drop || true && sequelize db:drop --env test || true && sequelize db:create && sequelize db:migrate && sequelize db:seed:all && sequelize db:create --env test && sequelize db:migrate --env test && sequelize db:seed:all --env test",
     "setup_db_drop": "sequelize db:drop",
+    "setup_db_create": "sequelize db:create && sequelize db:migrate",
     "setup_db_create_seed": "sequelize db:create && sequelize db:migrate && sequelize db:seed:all",
     "setup_test_db_drop": "sequelize db:drop --env test",
     "setup_test_db_create_seed": "sequelize db:create --env test && sequelize db:migrate --env test && sequelize db:seed:all --env test",
+    "db_seed_undo_all": "sequelize db:seed:undo:all",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
