@@ -6,7 +6,7 @@ body
   p Submit space for rent
   form(action='/spaces/new' method='POST')
     p
-      input.space_info(type='text', name='spaces', value='')
+      input.space_info(type='text', name='spaces', value='', required)
     input(type='submit', value='Submit')
 
   each space in spaces
