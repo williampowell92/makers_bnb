@@ -9,7 +9,7 @@
     "setup_db_create_seed": "sequelize db:create && sequelize db:migrate && sequelize db:seed:all",
     "setup_test_db_drop": "sequelize db:drop --env test",
     "setup_test_db_create_seed": "sequelize db:create --env test && sequelize db:migrate --env test && sequelize db:seed:all --env test",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start --reporters=verbose"
   },
   "repository": {
     "type": "git",
@@ -36,6 +36,7 @@
     "ajv-keywords": "^2.1.1",
     "cypress": "^2.1.0",
     "express": "^4.16.3",
+    "nodemon": "^1.17.5",
     "pg": "^7.4.3",
     "pg-hstore": "^2.3.2",
     "pug": "^2.0.3",
