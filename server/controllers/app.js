@@ -21,8 +21,8 @@ app.get('/', async function (req, res) {
   res.render('index', { title: 'MakersBnB', spaces: spacesArray })
 })
 
-app.post('/spaces/new', function (req, res) {
-  Spaces.create({
+app.post('/spaces/new', async function (req, res) {
+  await Spaces.create({
     name: req.body.spaces
   })
 
