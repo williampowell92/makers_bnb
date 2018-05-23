@@ -37,19 +37,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    queryInterface.bulkDelete('Spaces', [
-      {
-        name :'Will\'s flat'
-      },
-      {
-        name: 'Igor\'s house'
-      },
-      {
-        name: 'Rob\'s castle'
-      },
-      {
-        name: 'Sam\'s mansion'
-      }
-    ])
+    return queryInterface.bulkDelete('Spaces', null, {});
   }
 }

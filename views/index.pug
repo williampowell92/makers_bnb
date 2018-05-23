@@ -1,14 +1,13 @@
 html
 head
-  title= title
+  title MakersBnB
 body
   h1 Welcome to MakersBnB
   p Submit space for rent
   form(action='/spaces/new' method='POST')
     p
-      input.space_info(type='text', name='spaces', value='')
+      input.space_info(type='text', name='spaces', value='', required)
     input(type='submit', value='Submit')
 
-    ul
-      each space in spaces
-        li= space
+  each space in spaces
+    article= space
