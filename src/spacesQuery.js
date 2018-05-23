@@ -1,10 +1,9 @@
-module.exports = {
+const Spaces = require('../server/models/index').Spaces
 
+module.exports = {
   allRows: async function () {
-    const db = require('../server/models/index')
-    this.SPACES = db.Spaces
     var array = []
-    await this.SPACES
+    await Spaces
       .findAll()
       .then(function (spaces) {
         spaces.forEach(function (space) {
@@ -12,5 +11,11 @@ module.exports = {
         })
       })
     return array
+  },
+  createRow: function (spaceName) {
+    Spaces
+      .create({
+        name: spaceName
+      })
   }
 }

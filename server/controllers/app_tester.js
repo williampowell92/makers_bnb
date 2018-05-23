@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const Spaces = require('../models/index').Spaces
-const bnbEngine = require('../../src/exampleForTesting')
+const bnbEngine = require('../../src/spacesQuery')
 
 //Settings
 app.use(express.urlencoded())
