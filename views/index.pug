@@ -1,6 +1,6 @@
 html
 head
-  title= title
+  title MakersBnB
 body
   h1 Welcome to MakersBnB
   p Submit space for rent
@@ -9,6 +9,5 @@ body
       input.space_info(type='text', name='spaces', value='')
     input(type='submit', value='Submit')
 
-    ul
-      each space in spaces
-        li= space
+  each space in spaces
+    article= space

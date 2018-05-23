@@ -7,7 +7,7 @@ app.use(express.urlencoded())
 app.set('view engine', 'pug')
 
 //Server
-app.listen(3000, () => console.log('example app listening on port 3000!'))
+app.listen(3000, () => console.log('Server listening on port 3000'))
 
 //Routes
 app.get('/', async function (req, res) {
@@ -18,7 +18,7 @@ app.get('/', async function (req, res) {
     })
   })
 
-  res.render('index', { title: 'MakersBnB', spaces: spacesArray })
+  res.render('index', { spaces: spacesArray })
 })
 
 app.post('/spaces/new', async function (req, res) {
