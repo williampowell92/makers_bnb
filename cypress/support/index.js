@@ -20,5 +20,5 @@ import './commands'
 // require('./commands')
 
 beforeEach(function () {
-  cy.exec('npm run db_seed_undo_all')
+  cy.exec('npm run db_seed_undo_all_test')
 })
