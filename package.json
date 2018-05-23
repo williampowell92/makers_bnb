@@ -23,15 +23,23 @@
   },
   "homepage": "https://github.com/samworrall/MakersBnB#readme",
   "devDependencies": {
+    "jasmine-core": "^3.1.0",
+    "karma": "^2.0.2",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-coverage": "^1.1.2",
+    "karma-jasmine": "^1.1.2",
+    "karma-verbose-reporter": "0.0.6",
     "standard": "^11.0.1"
   },
   "dependencies": {
-    "pg": "^7.4.3",
-    "pg-hstore": "^2.3.2",
-    "sequelize": "^4.37.8",
-    "sequelize-cli": "^4.0.0",
+    "ajv": "^5.5.2",
+    "ajv-keywords": "^2.1.1",
     "cypress": "^2.1.0",
     "express": "^4.16.3",
-    "pug": "^2.0.3"
+    "pg": "^7.4.3",
+    "pg-hstore": "^2.3.2",
+    "pug": "^2.0.3",
+    "sequelize": "^4.37.8",
+    "sequelize-cli": "^4.0.0"
   }
 }
