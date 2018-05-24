@@ -20,6 +20,6 @@ app.get('/spaces/new', function (req, res) {
 })
 
 app.post('/spaces', async function (req, res) {
-  await spacesQuery.createRow(req.body.spaces)
+  await spacesQuery.createRow(req.body.spacesName)
   res.redirect('/')
 })
