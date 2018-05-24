@@ -7,7 +7,6 @@ module.exports = {
       .findAll()
       .then(function (spaces) {
         spaces.forEach(function (space) {
-          console.log(space
           array.push(space.get('name'))
         })
       })

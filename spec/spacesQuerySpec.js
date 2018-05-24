@@ -9,7 +9,7 @@ describe('spaceQuery', function () {
     }
 
     space = {
-      get: function () {}
+      get: function () { return 'test' }
     }
   })
 
@@ -24,62 +24,14 @@ describe('spaceQuery', function () {
   })
 
   describe('allRows', function () {
-    it('calls findAll', function () {
+    it('calls findAll', async function () {
       spyOn(space, 'get').and.returnValue('string')
       spyOn(Spaces, 'findAll').and.returnValue(new Promise(function (resolve, reject) {
         resolve([space])
       }))
       spacesQuery.allRows(Spaces)
       expect(Spaces.findAll).toHaveBeenCalled()
-      expect(spacesQuery.allRows(Spaces)).toEqual(['string'])
+      expect(await spacesQuery.allRows(Spaces)).toEqual(['string'])
     })
   })
 })
-//
-//
-//
-//
-// describe("createRow", function() {
-//   var spacesQuery = require('../src/spacesQuery')
-//   var Spaces
-//
-//   beforeEach(function() {
-//     Spaces = {
-//       create: function(spaceName) {}
-//     };
-//     spyOn(Spaces, 'create');
-//   });
-//
-//
-//   it('Creates a row', function() {
-//     spacesQuery.createRow('Homeless Jims Cabin of Love', Spaces)
-//     expect(Spaces.create).toHaveBeenCalled();
-//   });
-// });
-//
-// describe("allRows", function() {
-//   var spacesQuery = require('../src/spacesQuery')
-//   var Spaces
-//   var space
-//
-//   beforeEach(function() {
-//     space = {
-//       get: function () {
-//         return 'Simple bobs dumpster'
-//       },
-//       then: function () {
-//         return "testing then"
-//       }
-//     }
-//
-//
-//
-//     spyOn(Spaces, 'findAll');
-//   });
-//
-//   it('Returns an array of spaces', function(){
-//     spacesQuery.allRows(Spaces)
-//     expect(Spaces.findAll).toHaveBeenCalled();
-//     expect(spacesQuery.allRows(Spaces)).toEqual(['Simple bobs dumpster']);
-//   });
-// });
