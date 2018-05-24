@@ -29,8 +29,6 @@ describe('spaceQuery', function () {
       spyOn(Spaces, 'findAll').and.returnValue(new Promise(function (resolve, reject) {
         resolve([space])
       }))
-      spacesQuery.allRows(Spaces)
-      expect(Spaces.findAll).toHaveBeenCalled()
       expect(await spacesQuery.allRows(Spaces)).toEqual(['string'])
     })
   })
