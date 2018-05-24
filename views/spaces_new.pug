@@ -1,0 +1,21 @@
+html
+  include includes/header
+  script
+    include ../public/js/datePickerScript.js
+body
+  form(action='/spaces' method='POST' class='form form_newSpaces__full')
+    label(for="name") Space name:
+    input(class='form_newSpaces__field input_field input_field__spaceName', type='text', name='spacesName', value='', required)
+    br
+    label(for="description") Space description:
+    input(class='form_newSpaces__field input_field input_field__spaceDescription', type='text', name='spacesDescr', value='', required)
+    br
+    label(for="price") Price per night:
+    input(class='form_newSpaces__field input_field input_field__spacePrice', type='number', name='spacesPrice', placeholder='0', min='0', required)
+    br
+    label(for='startDate') From:
+    input(class='form_newSpaces__field input_field input_field__startDate', type='text', name='startDate', required)
+    label(for='endDate') To:
+    input(class='form_newSpaces__field input_field input_field__endDate', type='text', name='endDate', required)
+    br
+    input(type='submit', value='Submit')

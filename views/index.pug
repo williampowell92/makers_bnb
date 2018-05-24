@@ -1,13 +1,10 @@
 html
-head
-  title MakersBnB
+  include includes/header
 body
   h1 Welcome to MakersBnB
-  p Submit space for rent
-  form(action='/spaces/new' method='POST')
-    p
-      input.space_info(type='text', name='spaces', value='', required)
-    input(type='submit', value='Submit')
+  a.link-form(href='/spaces/new') Submit space for rent
 
   each space in spaces
-    article= space
+    article
+      div(class='spaceName')= space
+      div(class='spaceDescription')= spaceDescription
