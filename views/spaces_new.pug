@@ -3,7 +3,13 @@ head
   title Makers BnB - new space
 body
   form(action='/spaces' method='POST' class='form form_newSpaces__full')
-    label(for="spaces") Space name:
+    label(for="name") Space name:
     input(class='form_newSpaces__field input_field input_field__spaceName', type='text', name='spacesName', value='', required)
-    input(class="form_newSpaces__field input_field input_field__spaceDescription", type='text', name="spacesDescr", value='', required)
+    br
+    label(for="description") Space description:
+    input(class='form_newSpaces__field input_field input_field__spaceDescription', type='text', name='spacesDescr', value='', required)
+    br
+    label(for="price") Price per night:
+    input(class='form_newSpaces__field input_field input_field__spacePrice', type='number', name='spacesPrice', placeholder='0', min='0', required)
+    br
     input(type='submit', value='Submit')
