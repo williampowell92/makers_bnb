@@ -9,7 +9,7 @@ describe('spaceQuery', function () {
     }
 
     space = {
-      get: function () { return 'test' }
+      get: function () {}
     }
   })
 
