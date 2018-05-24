@@ -1,10 +1,13 @@
 const express = require('express')
 const app = express()
+const path = require('path')
 const spacesQuery = require('../../src/spacesQuery')
 
 //Settings
 app.use(express.urlencoded())
 app.set('view engine', 'pug')
+// app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static('public'))
 
 //Server
 const port = process.env.PORT || 3000

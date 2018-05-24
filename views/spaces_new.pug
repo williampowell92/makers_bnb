@@ -1,7 +1,7 @@
 html
-  include header
-  include datePickerScript
-  link(rel='stylesheet', type='text/css', href='code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css')
+  include includes/header
+  script
+    include ../public/js/datePickerScript.js
 body
   form(action='/spaces' method='POST' class='form form_newSpaces__full')
     label(for="name") Space name:
