@@ -1,9 +1,9 @@
 const Spaces = require('../server/models/index').Spaces
 
 module.exports = {
-  allRows: async function () {
+  allRows: async function (spaces = Spaces) {
     var array = []
-    await Spaces
+    await spaces
       .findAll()
       .then(function (spaces) {
         spaces.forEach(function (space) {
