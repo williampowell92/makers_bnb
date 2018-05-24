@@ -1,6 +1,7 @@
 html
-head
-  title Makers BnB - new space
+  include header
+  include datePickerScript
+  link(rel='stylesheet', type='text/css', href='code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css')
 body
   form(action='/spaces' method='POST' class='form form_newSpaces__full')
     label(for="name") Space name:
@@ -11,5 +12,10 @@ body
     br
     label(for="price") Price per night:
     input(class='form_newSpaces__field input_field input_field__spacePrice', type='number', name='spacesPrice', placeholder='0', min='0', required)
+    br
+    label(for='startDate') From:
+    input(class='form_newSpaces__field input_field input_field__startDate', type='text', name='startDate', required)
+    label(for='endDate') To:
+    input(class='form_newSpaces__field input_field input_field__endDate', type='text', name='endDate', required)
     br
     input(type='submit', value='Submit')
