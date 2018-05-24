@@ -10,15 +10,4 @@ describe('Index page', function() {
   it('has a link to /spaces/new', function () {
     cy.get('.link-form').contains('Submit space for rent')
   })
-
-  // it('Has a submit button', function () {
-  //   cy.get('form').submit();
-  //   cy.contains('Welcome')
-  // })
-  //
-  // it('Submits text', function () {
-  //   cy.get('.space-info')
-  //     .type('Testing text')
-  //     .should('have.value', 'Testing text')
-  // })
 })
