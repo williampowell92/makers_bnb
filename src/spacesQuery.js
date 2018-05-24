@@ -12,8 +12,8 @@ module.exports = {
       })
     return array
   },
-  createRow: async function (spaceName) {
-    await Spaces
+  createRow: async function (spaceName, spaces = Spaces) {
+    await spaces
       .create({
         name: spaceName
       })
