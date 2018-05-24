@@ -1,6 +1,7 @@
 describe('spaceQuery', function () {
   var spacesQuery = require('../src/spacesQuery')
   var Spaces
+  var space
 
   beforeEach(function () {
     Spaces = {
