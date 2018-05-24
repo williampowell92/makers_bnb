@@ -35,15 +35,32 @@ describe("createRow", function() {
 describe("allRows", function() {
   var spacesQuery = require('../src/spacesQuery')
   var Spaces
+  var space
+
   beforeEach(function() {
+    space = {
+      get: function () {
+        return 'Simple bobs dumpster'
+      },
+      then: function () {
+        return "testing then"
+      }
+    }
+
     Spaces = {
-      findAll: function() {}
+      findAll: function() {
+        return space
+      },
+
+      create: function(spaceName) {}
     };
+
     spyOn(Spaces, 'findAll');
   });
 
   it('Returns an array of spaces', function(){
     spacesQuery.allRows(Spaces)
     expect(Spaces.findAll).toHaveBeenCalled();
+    expect(spacesQuery.allRows(Spaces)).toEqual(['Simple bobs dumpster']);
   });
 });
