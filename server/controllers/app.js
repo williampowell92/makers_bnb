@@ -15,7 +15,7 @@ app.get('/', async function (req, res) {
   res.render('index', { title: 'MakersBnB', spaces: await spacesQuery.allRows() })
   })
 
-app.post('/spaces/new', async function (req, res) {
+app.post('/spaces', async function (req, res) {
   await spacesQuery.createRow(req.body.spaces)
   res.redirect('/')
 })
