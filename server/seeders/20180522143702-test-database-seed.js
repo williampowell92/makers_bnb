@@ -5,21 +5,25 @@ module.exports = {
     return queryInterface.bulkInsert('Spaces',[
       {
         name: 'Will\'s flat',
+        description: '10 bedroom studio',
         createdAt : new Date(),
         updatedAt : new Date()
     },
       {
         name: 'Igor\'s house',
+        description: 'Subterannean villa',
         createdAt : new Date(),
         updatedAt : new Date()
       },
       {
         name: 'Rob\'s castle',
+        description: '1 bedroom castle',
         createdAt : new Date(),
         updatedAt : new Date()
       },
       {
         name: 'Sam\'s mansion',
+        description: 'Playgirl mansion',
         createdAt : new Date(),
         updatedAt : new Date()
       }
