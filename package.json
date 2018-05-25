@@ -12,9 +12,9 @@
     "setup_test_db_create_seed": "sequelize db:create --env test && sequelize db:migrate --env test && sequelize db:seed:all --env test",
     "db_seed_undo_all": "sequelize db:seed:undo:all",
     "db_seed_undo_all_test": "sequelize db:seed:undo:all --env test",
-    "test_server": "export PORT=8000 && export NODE_ENV='test' && nodemon server/controllers/app.js",
-    "dev_server": "export PORT=3000 && export NODE_ENV='development' && nodemon server/controllers/app.js",
-    "test": "karma start --reporters=verbose"
+    "test_server": "export PORT=8000 && export NODE_ENV='test' && node server/controllers/app.js",
+    "dev_server": "export PORT=3000 && export NODE_ENV='development' && node server/controllers/app.js",
+    "test": "jasmine"
   },
   "repository": {
     "type": "git",
@@ -28,12 +28,6 @@
   },
   "homepage": "https://github.com/samworrall/MakersBnB#readme",
   "devDependencies": {
-    "jasmine-core": "^3.1.0",
-    "karma": "^2.0.2",
-    "karma-chrome-launcher": "^2.2.0",
-    "karma-coverage": "^1.1.2",
-    "karma-jasmine": "^1.1.2",
-    "karma-verbose-reporter": "0.0.6",
     "standard": "^11.0.1"
   },
   "dependencies": {

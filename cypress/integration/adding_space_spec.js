@@ -1,4 +1,5 @@
 describe('Adding a space', function() {
+
   beforeEach(function () {
     cy.visit('http://localhost:8000');
   })
@@ -26,5 +27,10 @@ describe('Adding a space', function() {
       .contains('1000000000')
     cy.get('.availableDates')
       .contains('15/05/2018 - 18/05/2018')
+
   })
+
+
+beforeEach(function() {
+  
 })
