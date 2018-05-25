@@ -7,7 +7,11 @@ module.exports = {
       .findAll()
       .then(function (spaces) {
         spaces.forEach(function (space) {
-          array.push(space.get('name'))
+          array.push({
+            name: space.get('name'),
+            description: space.get('description'),
+            price: space.get('price')
+          })
         })
       })
     return array
@@ -18,7 +22,6 @@ module.exports = {
         name: space.spacesName,
         description: space.spacesDescr,
         price: space.spacesPrice
-
       })
   }
 }
