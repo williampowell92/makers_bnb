@@ -6,6 +6,18 @@ describe('spaceQuery', function () {
   var getReturns
 
   beforeEach(function () {
+    example = {
+      spacesName: 'Homeless Jims Cabin of Love',
+      startDate: '01/01/18',
+      endDate: '02/01/18'
+    }
+
+    getValues = {
+      name: 'Homeless Jims Cabin of Love',
+      fromDate: '01/01/18',
+      toDate: '02/01/18'
+    }
+
     Spaces = {
       create: function (space) {},
       findAll: function () {}
@@ -25,19 +37,26 @@ describe('spaceQuery', function () {
       'name': 'Jacks trunk',
       'description': 'A treehouse',
       'price': '3'
+      'fromDate': '01/01/18',
+      'toDate': '02/01/18'
     }
   })
 
   describe('createRow', function () {
     it('calls create', function() {
       spyOn(Spaces, 'create')
+      spacesQuery.createRow(example, Spaces)
+      expect(Spaces.create).toHaveBeenCalledWith({
+        name: 'Homeless Jims Cabin of Love',
       spacesQuery.createRow(exampleSpace, Spaces)
       expect(Spaces.create).toHaveBeenCalledWith({
         name: 'Jacks trunk',
         description: 'A treehouse',
-        price: '3'
+        price: '3',
+        fromDate: '01/01/18',
+        toDate: '02/01/18'
       });
-    })
+    });
   })
 
   describe('allRows', function () {
@@ -51,7 +70,9 @@ describe('spaceQuery', function () {
       expect(await spacesQuery.allRows(Spaces)).toEqual([{
         name: 'Jacks trunk',
         description: 'A treehouse',
-        price: '3'
+        price: '3',
+        fromDate: '01/01/18',
+        toDate: '02/01/18'
       }])
     })
   })

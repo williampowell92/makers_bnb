@@ -20,6 +20,14 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false
       },
+      fromDate: {
+        type: Sequelize.DATEONLY,
+        allowNull: false
+      },
+      toDate: {
+        type: Sequelize.DATEONLY,
+        allowNull: false
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

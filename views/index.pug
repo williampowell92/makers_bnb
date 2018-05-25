@@ -5,7 +5,9 @@ body
   a.link-form(href='/spaces/new') Submit space for rent
 
   each space in spaces
+    hr
     article
       div(class='spaceName')= space.name
       div(class='spaceDescription')= space.description
       div(class='spacePrice')= space.price
+      div(class='availableDates')= space.fromDate + ' - ' + space.toDate
