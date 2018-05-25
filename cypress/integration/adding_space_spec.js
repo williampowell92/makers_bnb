@@ -14,7 +14,7 @@ describe('Adding a space', function() {
     cy.get('.input_field__spacePrice')
       .type("1000000000")
     cy.get('.input_field__startDate')
-      .type('15/05/2018')
+      .type("15/05/2018")
     cy.get('.input_field__endDate')
       .type('18/05/2018')
     cy.get('form').submit()
