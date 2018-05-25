@@ -6,5 +6,6 @@ body
 
   each space in spaces
     article
-      div(class='spaceName')= space
-      div(class='spaceDescription')= spaceDescription
+      div(class='spaceName')= space.name
+      div(class='spaceDescription')= space.description
+      div(class='spacePrice')= space.price
