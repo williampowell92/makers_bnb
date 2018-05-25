@@ -2,10 +2,17 @@ describe('spaceQuery', function () {
   var spacesQuery = require('../src/spacesQuery')
   var Spaces
   var space
+  var example
 
   beforeEach(function () {
+    example = {
+      spaceName: 'Homeless Jims Cabin of Love',
+      fromDate: '01/01/18',
+      toDate: '02/01/18'
+    }
+
     Spaces = {
-      create: function (spaceName) {},
+      create: function (example) {},
       findAll: function () {}
     }
 
@@ -17,11 +24,15 @@ describe('spaceQuery', function () {
   describe('createRow', function () {
     it('calls create', function() {
       spyOn(Spaces, 'create')
-      spacesQuery.createRow('Homeless Jims Cabin of Love', Spaces)
+      spacesQuery.createRow(example, Spaces)
       expect(Spaces.create).toHaveBeenCalledWith({
-        name: 'Homeless Jims Cabin of Love'
+        name: example['spaceName'],
+        fromDate: example['fromDate'],
+        toDate: example['toDate']
       });
-    })
+    });
+
+
   })
 
   describe('allRows', function () {
