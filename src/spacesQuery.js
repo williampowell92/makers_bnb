@@ -12,10 +12,13 @@ module.exports = {
       })
     return array
   },
-  createRow: async function (spaceName, spaces = Spaces) {
+  createRow: async function (space, spaces = Spaces) {
     await spaces
       .create({
-        name: spaceName
+        name: space.spacesName,
+        description: space.spacesDescr,
+        price: space.spacesPrice
+
       })
   }
 }

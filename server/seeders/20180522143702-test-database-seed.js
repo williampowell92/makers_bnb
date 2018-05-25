@@ -12,7 +12,7 @@ module.exports = {
     },
       {
         name: 'Igor\'s house',
-        description: 'Subterannean villa',
+        description: 'Subterranean villa',
         price: 3298234,
         createdAt : new Date(),
         updatedAt : new Date()

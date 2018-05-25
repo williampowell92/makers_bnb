@@ -5,21 +5,29 @@ describe('spaceQuery', function () {
 
   beforeEach(function () {
     Spaces = {
-      create: function (spaceName) {},
+      create: function (space) {},
       findAll: function () {}
     }
 
     space = {
       get: function () {}
     }
+
+    exampleSpace = {
+      spacesName: 'Jacks trunk',
+      spacesDescr: 'A treehouse',
+      spacesPrice: '3'
+    }
   })
 
   describe('createRow', function () {
     it('calls create', function() {
       spyOn(Spaces, 'create')
-      spacesQuery.createRow('Homeless Jims Cabin of Love', Spaces)
+      spacesQuery.createRow(exampleSpace, Spaces)
       expect(Spaces.create).toHaveBeenCalledWith({
-        name: 'Homeless Jims Cabin of Love'
+        name: 'Jacks trunk',
+        description: 'A treehouse',
+        price: '3'
       });
     })
   })
