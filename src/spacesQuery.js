@@ -7,15 +7,21 @@ module.exports = {
       .findAll()
       .then(function (spaces) {
         spaces.forEach(function (space) {
-          array.push(space.get('name'))
+          array.push({
+            name: space.get('name'),
+            description: space.get('description'),
+            price: space.get('price')
+          })
         })
       })
     return array
   },
-  createRow: async function (spaceName, spaces = Spaces) {
+  createRow: async function (space, spaces = Spaces) {
     await spaces
       .create({
-        name: spaceName
+        name: space.spacesName,
+        description: space.spacesDescr,
+        price: space.spacesPrice
       })
   }
 }
