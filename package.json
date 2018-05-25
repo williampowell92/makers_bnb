@@ -4,7 +4,7 @@
   "description": "Headline specifications: ------------------------",
   "main": "app.js",
   "scripts": {
-    "easy_setup": "sequelize db:drop || true && sequelize db:drop --env test || true && sequelize db:create && sequelize db:migrate && sequelize db:seed:all && sequelize db:create --env test && sequelize db:migrate --env test && sequelize db:seed:all --env test",
+    "easy_setup": "sequelize db:drop || true && sequelize db:drop --env test || true && sequelize db:create && sequelize db:migrate && sequelize db:seed:all && sequelize db:create --env test && sequelize db:migrate --env test",
     "setup_db_drop": "sequelize db:drop",
     "setup_db_create": "sequelize db:create && sequelize db:migrate",
     "setup_db_create_seed": "sequelize db:create && sequelize db:migrate && sequelize db:seed:all",

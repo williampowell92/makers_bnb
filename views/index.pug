@@ -8,5 +8,6 @@ body
     hr
     article
       div(class='spaceName')= space.name
-      div(class='spaceDescription')= spaceDescription
+      div(class='spaceDescription')= space.description
+      div(class='spacePrice')= space.price
       div(class='availableDates')= space.fromDate + ' - ' + space.toDate

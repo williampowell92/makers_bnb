@@ -9,6 +9,8 @@ module.exports = {
         spaces.forEach(function (space) {
           array.push({
             name: space.get('name'),
+            description: space.get('description'),
+            price: space.get('price'),
             fromDate: space.get('fromDate'),
             toDate: space.get('toDate')
           })
@@ -16,12 +18,14 @@ module.exports = {
       })
     return array
   },
-  createRow: async function (reqBody, spaces = Spaces) {
+  createRow: async function (space, spaces = Spaces) {
     await spaces
       .create({
-        name: reqBody.spacesName,
-        fromDate: reqBody.startDate,
-        toDate: reqBody.endDate
+        name: space.spacesName,
+        description: space.spacesDescr,
+        price: space.spacesPrice,
+        fromDate: space.startDate,
+        toDate: space.endDate
       })
   }
 }

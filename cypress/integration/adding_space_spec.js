@@ -27,6 +27,5 @@ describe('Adding a space', function() {
     //   .contains('1000000000')
     cy.get('.availableDates')
       .contains('2018-05-15 - 2018-05-18')
-
   })
 })
