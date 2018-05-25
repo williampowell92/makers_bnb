@@ -7,17 +7,22 @@ module.exports = {
       .findAll()
       .then(function (spaces) {
         spaces.forEach(function (space) {
-          array.push(space.get('name'))
+          array.push({
+            name: space.get('name'),
+            fromDate: space.get('fromDate'),
+            toDate: space.get('toDate')
+          })
         })
       })
+    console.log(array)
     return array
   },
-  createRow: async function (values, spaces = Spaces) {
+  createRow: async function (reqBody, spaces = Spaces) {
     await spaces
       .create({
-        name: values.spaceName,
-        fromDate: values.fromDate,
-        toDate: values.toDate
+        name: reqBody.spacesName,
+        fromDate: reqBody.startDate,
+        toDate: reqBody.endDate
       })
   }
 }

@@ -6,5 +6,7 @@ body
 
   each space in spaces
     article
-      div(class='spaceName')= space
+      div(class='spaceName')= space.name
       div(class='spaceDescription')= spaceDescription
+      div(class='spaceFromDate')= space.fromDate
+      div(class='spaceToDate')= space.toDate
