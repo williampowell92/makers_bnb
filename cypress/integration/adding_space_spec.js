@@ -29,8 +29,4 @@ describe('Adding a space', function() {
       .contains('15/05/2018 - 18/05/2018')
 
   })
-
-
-beforeEach(function() {
-  
 })
