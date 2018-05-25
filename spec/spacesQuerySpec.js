@@ -3,10 +3,17 @@ describe('spaceQuery', function () {
   var Spaces
   var space
   var example
+  var getValues
 
   beforeEach(function () {
     example = {
-      spaceName: 'Homeless Jims Cabin of Love',
+      spacesName: 'Homeless Jims Cabin of Love',
+      startDate: '01/01/18',
+      endDate: '02/01/18'
+    }
+
+    getValues = {
+      name: 'Homeless Jims Cabin of Love',
       fromDate: '01/01/18',
       toDate: '02/01/18'
     }
@@ -26,9 +33,9 @@ describe('spaceQuery', function () {
       spyOn(Spaces, 'create')
       spacesQuery.createRow(example, Spaces)
       expect(Spaces.create).toHaveBeenCalledWith({
-        name: example['spaceName'],
-        fromDate: example['fromDate'],
-        toDate: example['toDate']
+        name: 'Homeless Jims Cabin of Love',
+        fromDate: '01/01/18',
+        toDate: '02/01/18'
       });
     });
 
@@ -37,11 +44,17 @@ describe('spaceQuery', function () {
 
   describe('allRows', function () {
     it('calls findAll', async function () {
-      spyOn(space, 'get').and.returnValue('string')
+      spyOn(space, 'get').and.callFake(function (value) {
+        return getValues[value]
+      })
       spyOn(Spaces, 'findAll').and.returnValue(new Promise(function (resolve, reject) {
         resolve([space])
       }))
-      expect(await spacesQuery.allRows(Spaces)).toEqual(['string'])
+      expect(await spacesQuery.allRows(Spaces)).toEqual([{
+        name: 'Homeless Jims Cabin of Love',
+        fromDate: '01/01/18',
+        toDate: '02/01/18'
+      }])
     })
   })
 })

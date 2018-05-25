@@ -14,7 +14,6 @@ module.exports = {
           })
         })
       })
-    console.log(array)
     return array
   },
   createRow: async function (reqBody, spaces = Spaces) {
