@@ -120,7 +120,7 @@ npm run dev_server
 
 The server will boot up on localhost:3000 which can be accessed via your client. You should be redirected to the following screen:
 
-[home page](https://i.imgur.com/dyOj2CK.png)
+![home page](https://i.imgur.com/dyOj2CK.png)
 
 Click 'Submit space for rent' and fill in the form to add your space for rent.
 
