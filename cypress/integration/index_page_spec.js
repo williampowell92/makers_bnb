@@ -1,13 +1,13 @@
-describe('Index page', function() {
-  beforeEach(function () {
-    cy.visit('http://localhost:8000')
-  })
+describe('Index page', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:8000');
+  });
 
-  it('Displays a welcome message', function () {
+  it('Displays a welcome message', () => {
     cy.contains('Welcome to MakersBnB').should('be.visible');
-  })
+  });
 
-  it('has a link to /spaces/new', function () {
-    cy.get('.link-form').contains('Submit space for rent')
-  })
-})
+  it('has a link to /spaces/new', () => {
+    cy.get('.link-form').contains('Submit space for rent');
+  });
+});

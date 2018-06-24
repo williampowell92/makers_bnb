@@ -1,24 +1,25 @@
-const Spaces = require('../server/models/index').Spaces
+const { Spaces } = require('../server/models/index');
 
 module.exports = {
-  allRows: async function (spaces = Spaces) {
-    var array = []
+  allRows: async (spaces = Spaces) => {
+    const array = [];
     await spaces
       .findAll()
-      .then(function (spaces) {
-        spaces.forEach(function (space) {
+      .then((allSpaces) => {
+        allSpaces.forEach((space) => {
           array.push({
             name: space.get('name'),
             description: space.get('description'),
             price: space.get('price'),
             fromDate: space.get('fromDate'),
             toDate: space.get('toDate')
-          })
-        })
-      })
-    return array
+          });
+        });
+      });
+
+    return array;
   },
-  createRow: async function (space, spaces = Spaces) {
+  async createRow(space, spaces = Spaces) {
     await spaces
       .create({
         name: space.spacesName,
@@ -26,6 +27,6 @@ module.exports = {
         price: space.spacesPrice,
         fromDate: space.startDate,
         toDate: space.endDate
-      })
+      });
   }
-}
+};

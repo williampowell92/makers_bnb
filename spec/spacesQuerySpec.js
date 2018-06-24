@@ -1,19 +1,20 @@
-describe('spaceQuery', function () {
-  var spacesQuery = require('../src/spacesQuery')
-  var Spaces
-  var space
-  var exampleSpace
-  var getReturns
+const spacesQuery = require('../src/spacesQuery');
 
-  beforeEach(function () {
+describe('spaceQuery', () => {
+  let Spaces;
+  let space;
+  let exampleSpace;
+  let getReturns;
+
+  beforeEach(() => {
     Spaces = {
-      create: function (space) {},
-      findAll: function () {}
-    }
+      create() {},
+      findAll() {}
+    };
 
     space = {
-      get: function () {}
-    }
+      get() {}
+    };
 
     exampleSpace = {
       spacesName: 'Jacks trunk',
@@ -21,21 +22,22 @@ describe('spaceQuery', function () {
       spacesPrice: '3',
       startDate: '01/01/18',
       endDate: '02/01/18'
-    }
+    };
 
     getReturns = {
-      'name': 'Jacks trunk',
-      'description': 'A treehouse',
-      'price': '3',
-      'fromDate': '01/01/18',
-      'toDate': '02/01/18'
-    }
-  })
+      name: 'Jacks trunk',
+      description: 'A treehouse',
+      price: '3',
+      fromDate: '01/01/18',
+      toDate: '02/01/18'
+    };
+  });
 
-  describe('createRow', function () {
-    it('calls create', function() {
-      spyOn(Spaces, 'create')
-      spacesQuery.createRow(exampleSpace, Spaces)
+  describe('createRow', () => {
+    it('calls create', () => {
+      spyOn(Spaces, 'create');
+      spacesQuery.createRow(exampleSpace, Spaces);
+
       expect(Spaces.create).toHaveBeenCalledWith({
         name: 'Jacks trunk',
         description: 'A treehouse',
@@ -44,23 +46,22 @@ describe('spaceQuery', function () {
         toDate: '02/01/18'
       });
     });
-  })
+  });
 
-  describe('allRows', function () {
-    it('calls findAll', async function () {
-      spyOn(space, 'get').and.callFake(function (columnName) {
-        return getReturns[columnName]
-      })
-      spyOn(Spaces, 'findAll').and.returnValue(new Promise(function (resolve, reject) {
-        resolve([space])
-      }))
+  describe('allRows', () => {
+    it('calls findAll', async () => {
+      spyOn(space, 'get').and.callFake(columnName => getReturns[columnName]);
+      spyOn(Spaces, 'findAll').and.returnValue(new Promise((resolve) => {
+        resolve([space]);
+      }));
+
       expect(await spacesQuery.allRows(Spaces)).toEqual([{
         name: 'Jacks trunk',
         description: 'A treehouse',
         price: '3',
         fromDate: '01/01/18',
         toDate: '02/01/18'
-      }])
-    })
-  })
-})
+      }]);
+    });
+  });
+});

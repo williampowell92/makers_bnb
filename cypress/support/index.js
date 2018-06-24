@@ -14,11 +14,11 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
+import './commands';
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
-beforeEach(function () {
-  cy.exec('npm run db_seed_undo_all_test')
-})
+beforeEach(() => {
+  cy.exec('npm run db_seed_undo_all_test');
+});
