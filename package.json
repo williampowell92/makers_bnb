@@ -14,7 +14,7 @@
     "db_seed_undo_all_test": "sequelize db:seed:undo:all --env test",
     "test_server": "export PORT=8000 && export NODE_ENV='test' && nodemon server/controllers/app.js",
     "dev_server": "export PORT=3000 && export NODE_ENV='development' && nodemon server/controllers/app.js",
-    "unit_test": "./node_modules/.bin/jasmine",
+    "unit_test": "./node_modules/.bin/jasmine --config=jasmine.json",
     "feature_test": "./node_modules/.bin/cypress run"
   },
   "repository": {

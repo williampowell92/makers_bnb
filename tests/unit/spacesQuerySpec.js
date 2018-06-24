@@ -1,4 +1,4 @@
-const spacesQuery = require('../src/spacesQuery');
+const spacesQuery = require('../../src/spacesQuery');
 
 describe('spaceQuery', () => {
   let Spaces;
